@@ -41,6 +41,8 @@ out/
 ### Java ###
 # Compiled class file
 *.class
+*.lock
+*.bin
 
 # Log file
 *.log

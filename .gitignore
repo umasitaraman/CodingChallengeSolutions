@@ -75,3 +75,6 @@ sketch
 
 # Cache of project
 .gradletasknamecache
+/build/
+/.gradle/
+/.idea/

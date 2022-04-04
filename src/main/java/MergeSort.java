@@ -1,3 +1,8 @@
+/**
+ *  O(n log n)
+ * The log n comes from the number of times we have to cut nn in half to get down to subarrays of just 1 element
+ * The additional n comes from the time cost of merging all n items together each time we merge two sorted subarrays.
+ */
 class MergeSort
 {
     // Merges two subarrays of arr[].

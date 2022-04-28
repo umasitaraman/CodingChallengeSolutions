@@ -10,6 +10,17 @@ public class ReverseOnlyTheStringInParentheses {
             str.replace(start, end + 1, new StringBuilder(str.substring(start+1, end)).reverse().toString());
         }
         return str.toString();
+
+    }
+    public static void main(String[] args) {
+
+        String inputString = "foo(bar(baz))blim";
+
+        ReverseOnlyTheStringInParentheses p = new ReverseOnlyTheStringInParentheses();
+        System.out.println(p.reverseInParentheses(inputString));
+    }
+}
+
 //        int startingIndex = 0;
 //        int endingIndex = 0;
 //        String newInputString = "";
@@ -32,12 +43,3 @@ public class ReverseOnlyTheStringInParentheses {
 //        }
 //
 //        return newInputString;
-    }
-    public static void main(String[] args) {
-
-        String inputString = "foo(bar(baz))blim";
-
-        ReverseOnlyTheStringInParentheses p = new ReverseOnlyTheStringInParentheses();
-        System.out.println(p.reverseInParentheses(inputString));
-    }
-}

@@ -1,22 +1,32 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class LongestSubstringWithoutRepeatingCharacters {
     public int lengthOfLongestSubstring(String s) {
-        int lengthOfSubString = 0;
-        List<String> longestSubstring = new ArrayList<>();
-        for (int i = 0; i < s.length(); i++) {
-            if(!longestSubstring.contains(s.charAt(i))) {
-                longestSubstring.add(String.valueOf(s.charAt(i)));
+        int i = 0;
+        int j = 0;
+        int max = 0;
+
+        Set<Character> unique = new HashSet<>();
+
+        while(j < s.length()) {
+            if(!unique.contains(s.charAt(j))) {
+                unique.add(s.charAt(j));
+                j++;
+                max = Math.max(max, unique.size());
+            } else {
+                unique.remove(s.charAt(i));
+                i++;
             }
         }
-        lengthOfSubString = longestSubstring.size();
-        return lengthOfSubString;
+        return max;
     }
 
     public static void main(String[] args) {
         String s = "abcabcbb";
         LongestSubstringWithoutRepeatingCharacters l = new LongestSubstringWithoutRepeatingCharacters();
-        l.lengthOfLongestSubstring(s);
+        System.out.println(l.lengthOfLongestSubstring(s));
     }
 }

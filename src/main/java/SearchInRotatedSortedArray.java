@@ -6,9 +6,10 @@ public class SearchInRotatedSortedArray {
 
         if(nums == null || nums.length ==0) return -1;
         int l = 0, r = nums.length - 1;
+        int m = 0;
 
         while (l < r) {
-            int m = l + (r - l) / 2;
+            m = l + (r - l) / 2;
             if (nums[m] > nums[r]) {
                 l = m + 1;
             } else {
@@ -27,7 +28,7 @@ public class SearchInRotatedSortedArray {
         }
 
         while (l <= r) {
-            int m = l + (r - l) / 2;
+            m = l + (r - l) / 2;
             if(nums[m] == target) {
                 return m;
             } else if(nums[m] < target) {
